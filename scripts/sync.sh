@@ -18,8 +18,8 @@ sed -i "s#.*当前进度.*#- 🚀 **当前进度**：试点阶段，已完成 $c
 git add .
 git commit -m "Auto sync: $(date +"%Y-%m-%d %H:%M") | 完成 $completed 卷标注，进度 $progress%" || echo "No changes to commit"
 
-# 推送到GitHub
-GIT_SSH_COMMAND="ssh -i /home/gem/.ssh/zizhitongjian_deploy -o StrictHostKeyChecking=no" git pull origin main --rebase
-GIT_SSH_COMMAND="ssh -i /home/gem/.ssh/zizhitongjian_deploy -o StrictHostKeyChecking=no" git push origin main
+# 暂不推送到GitHub，仅做本地提交
+# GIT_SSH_COMMAND="ssh -i /home/gem/.ssh/zizhitongjian_deploy -o StrictHostKeyChecking=no" git pull origin main --rebase
+# GIT_SSH_COMMAND="ssh -i /home/gem/.ssh/zizhitongjian_deploy -o StrictHostKeyChecking=no" git push origin main
 
-echo "✅ Sync completed at $(date +"%Y-%m-%d %H:%M") | Progress: $completed/$total ($progress%)"
+echo "✅ Sync completed at $(date +"%Y-%m-%d %H:%M") | Progress: $completed/$total ($progress%) | 仅本地提交，未推送远程"
