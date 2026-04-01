@@ -3,6 +3,9 @@ set -e
 
 cd /home/gem/workspace/zizhitongjian
 
+# 覆盖全局git配置，强制使用ssh推送
+git config --local url."git@github.com:".insteadOf "git@github.com:"
+
 # 计算进度
 completed=$(ls chapters/*.md 2>/dev/null | wc -l)
 total=294
